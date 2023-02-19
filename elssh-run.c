@@ -17,23 +17,22 @@ extern void elssh_run(){
             puts("Error reading line");
             continue;
         }
-        printf("%s\n", line);
 
         // split the line into arguments or tokens
-        // char **args = elssh_splitline(line);
-        // if(args == NULL){
-        //     puts("Error splitting line");
-        //     continue;
-        // }
+        char **args = elssh_splitline(line);
+        if(args == NULL){
+            puts("Error splitting line");
+            continue;
+        }
 
         // execute the commands
-        // int status = elssh_execute(args);
-        // if(status == 0){
-        //     running = 0;
-        // }
+        int status = elssh_execute(args);
+        if(status == 0){
+            running = 0;
+        }
 
         // free memory
-        // free(line);
-        // free(args);
+        // free(line); // the trim messes up the memory address, let program exit to free memory
+        free(args);
     }  
 }
