@@ -16,5 +16,5 @@ extern char *elssh_readline(){
             exit(EXIT_FAILURE);
         }
     }
-    return line;
+    return trim(line);
 }
