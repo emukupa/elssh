@@ -2,6 +2,7 @@
 #define ELSSH_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * @brief Clean up the environment
