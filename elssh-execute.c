@@ -17,5 +17,6 @@ extern int elssh_execute(char **tokens){
     }
 
     // if the command is not a built-in command, then execute the command
+    // TODO: fork a child process and execute the command
     return 1;
 }
