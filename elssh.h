@@ -6,11 +6,20 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define ELSSH_TOK_BUFSIZE 32
+
 /**
  * @brief Clean up the environment
  * @return void
 */
 extern void elssh_cleanup(); 
+
+/**
+ * @brief execute the command line tokens
+ * @param tokens command line array pointer of tokens 
+ * @return the status of the commands
+*/
+extern int elssh_execute(char **tokens);
 
 /**
  * @brief Initialize the environment
@@ -43,6 +52,13 @@ extern char *left_trim(char *str);
  * @return the right trimmed string
 */
 extern char *right_trim(char *str);
+
+/**
+ * @brief split the command line string into tokens
+ * @param line_str command line string pointer
+ * @return the array of tokens
+*/
+extern char **elssh_splitline(char *line_str);
 
 /**
  * @brief trims the leading and trailing whitespace from a string
