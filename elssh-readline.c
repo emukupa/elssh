@@ -1,6 +1,5 @@
 #include "elssh.h"
 
-
 /**
  * @brief Read a line from stdin
  * @return char* the pointer to the line read
@@ -16,5 +15,6 @@ extern char *elssh_readline(){
             exit(EXIT_FAILURE);
         }
     }
+    
     return trim(line);
 }
