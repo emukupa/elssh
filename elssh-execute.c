@@ -12,10 +12,12 @@ extern int elssh_execute(char **tokens){
     }
 
     // check if the command is a built-in command
-    if(strcmp(tokens[0], "exit") == 0 || strcmp(tokens[0], "quit") == 0 || strcmp(tokens[0], "q") == 0){
-        return 0;
+    for(int i=0; i < elssh_num_of_builtin_funcs(); i++){
+        if(strcmp(tokens[0], elssh_builtin_str[i]) == 0){
+            return (*elssh_builtin_func[i])(tokens);
+        }
     }
-
+ 
     // if the command is not a built-in command, then execute the command
     // TODO: fork a child process and execute the command
     return 1;

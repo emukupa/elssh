@@ -5,8 +5,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
+#define ELSSH_BUFSIZE 1024
 #define ELSSH_TOK_BUFSIZE 32
+
+/**
+ * Function declerations for the ELSSH builtin functions
+ * These functions are defined in elssh-builtin.c
+*/
+extern int elssh_cd(char **args);
+extern int elssh_help(char **args);
+extern int elssh_terminate();
+
+/**
+ * List of builtin commands
+*/
+extern char *elssh_builtin_str[];
+
+/**
+ * List of builtin functions corresponding to the builtin commands
+*/
+extern int (*elssh_builtin_func[]) (char **);
+
+/**
+ * @brief number of builtin commands
+ * @param void
+ * @return the number of builtin commands
+*/
+extern int elssh_num_of_builtin_funcs();
 
 /**
  * @brief Clean up the environment
@@ -52,6 +79,13 @@ extern char *left_trim(char *str);
  * @return the right trimmed string
 */
 extern char *right_trim(char *str);
+
+/**
+ * @brief split the command line string into tokens
+ * @param line_str command line string pointer
+ * @return the array of tokens
+*/
+extern char **elssh_splitline(char *line_str);
 
 /**
  * @brief split the command line string into tokens
