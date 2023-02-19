@@ -5,7 +5,7 @@
  * @brief Initialize the environment
  * @return void
 */
-void elssh_init(){
+extern void elssh_init(){
     puts("Welcome to elssh v0.0.1");
     puts("Usage: elssh [options] [command]");
     puts("Options: ");
