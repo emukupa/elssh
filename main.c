@@ -2,13 +2,13 @@
 
 int main(){
     // Initialize the environment
-    // elssh_init();
+    elssh_init();
 
     // continuously run the shell until stopped
-    // elssh_run();
+    elssh_run();
 
     // clean up the environment
-    // elssh_cleanup();
+    elssh_cleanup();
 
     return 0;
 }

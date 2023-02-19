@@ -3,7 +3,7 @@ CFLAGS= -Wall -Wextra -Werror -O0 -pedantic -std=c99 -g -I .
 # LDFLAGS= -L .
 # LDLIBS= -lmy -lncurses
 DEPS= *.h
-OBJ= main.o
+OBJ= main.o elssh-init.o elssh-run.c elssh-cleanup.o
 # SRC= *.c
 
 # all: $(OBJ)
