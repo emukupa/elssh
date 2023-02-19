@@ -21,7 +21,7 @@ extern char **elssh_splitline(char *line_str){
     char *tracker = line_str;
 
     // loop through the string splitting it into tokens
-    for(int i = 0; i < str_len; i++){
+    for(size_t i = 0; i < str_len; i++){
         // if the current character is a space, then we have reached the end of a token
         if(line_str[i] == ' '){
             // replace the space with a null terminator

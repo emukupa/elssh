@@ -6,5 +6,16 @@
  * @return the status of the commands
 */
 extern int elssh_execute(char **tokens){
-  return 1;
+    // if the command is empty, then return
+    if(tokens[0] == NULL){
+        return 1;
+    }
+
+    // check if the command is a built-in command
+    if(strcmp(tokens[0], "exit") == 0 || strcmp(tokens[0], "quit") == 0 || strcmp(tokens[0], "q") == 0){
+        return 0;
+    }
+
+    // if the command is not a built-in command, then execute the command
+    return 1;
 }
